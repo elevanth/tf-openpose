@@ -22,11 +22,11 @@ config.gpu_options.allow_growth = True
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Tensorflow Openpose Inference')
-    parser.add_argument('--imgpath', type=str, default='./images/p2.jpg')
+    parser.add_argument('--imgpath', type=str, default='./images/d.jpg')
     parser.add_argument('--input-width', type=int, default=368)
     parser.add_argument('--input-height', type=int, default=368)
     parser.add_argument('--stage-level', type=int, default=6)
-    parser.add_argument('--model', type=str, default='mobilenet', help='cmu / mobilenet / mobilenet_accurate / mobilenet_fast')
+    parser.add_argument('--model', type=str, default='cmu', help='cmu / mobilenet / mobilenet_accurate / mobilenet_fast')
     args = parser.parse_args()
 
     input_node = tf.placeholder(tf.float32, shape=(1, args.input_height, args.input_width, 3), name='image')
